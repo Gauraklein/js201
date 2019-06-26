@@ -21,7 +21,22 @@
 // isVowel(99) --> false
 // isVowel({e: 'Elephant'}) --> false
 
-
+function isVowel(character) {
+    switch (character) {
+        case "a":
+        case "e":
+        case "i":
+        case "o":
+        case "u":
+        return true;
+        break;
+        default:
+        return false;
+        break;
+    }
+}
+console.log(isVowel("a"));
+console.log(isVowel("b"));
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write two functions: "isEven" and "isOdd" that take a number argument and
