@@ -21,22 +21,19 @@
 // isVowel(99) --> false
 // isVowel({e: 'Elephant'}) --> false
 
+
+
 function isVowel(character) {
-    switch (character) {
-        case "a":
-        case "e":
-        case "i":
-        case "o":
-        case "u":
+    let vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"]; // array
+    let index = vowels.indexOf(character); //checking if vowel is present
+    if (index >= 0) { 
         return true;
-        break;
-        default:
+    } else { 
         return false;
-        break;
     }
 }
-console.log(isVowel("a"));
-console.log(isVowel("b"));
+
+// array index of
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write two functions: "isEven" and "isOdd" that take a number argument and
@@ -51,6 +48,22 @@ console.log(isVowel("b"));
 // isOdd(5) --> true
 // isOdd('7') --> false
 // isOdd(3.14) --> false
+
+function isEven(number) {
+    if (number % 2 === 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function isOdd(number) {
+    if (number % 2 === 1 || number % 2 === -1) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 
 
@@ -67,3 +80,18 @@ console.log(isVowel("b"));
 // isCapitalCity('Texas', 'Houston') --> false
 // isCapitalCity('Alaska', 'Juneau') --> true
 // isCapitalCity('Strawberry', 'Mango') --> false
+
+let capitalCity = {
+    Texas: "Austin",
+    Alabama: "Montgomery",
+    Alaska: "Juneau"
+}
+
+function isCapitalCity (state, city) {
+    if (capitalCity[state] == city) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
