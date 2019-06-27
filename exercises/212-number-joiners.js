@@ -7,14 +7,18 @@
 
 function numberJoinerWhile (start, end) {
    let result = "";
-     while (start <= end) {
-        result = result + start + "_";
-        start++;
+        while (start <= end) {
+            if (start < end) {
+            result = result + start + "_";
+            start++;
+            }
+        else {
+           return result = result + end;
+        }
     }
-    result = result.slice(0, -1);
-    return result;
-}
+} 
 
+console.log(numberJoinerWhile(1, 19));
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "numberJoinerFor" which does the same thing as "numberJoinerWhile",
@@ -22,13 +26,16 @@ function numberJoinerWhile (start, end) {
 
 function numberJoinerFor (start, end) {
     let result = "";
-    for (start; start <= end; start++) {
-        result = result + start + "_";
-    }
-    result = result.slice(0, -1);
-    return result;
+        for (start; start <= end; start++) {
+            if (start < end) {
+            result = result + start + "_";
+            } else {
+                return result += end;
+            }
+        }
 }
 
+console.log(numberJoinerFor(4, 44));
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "numberJoinerFancy" which does the same thing as "numberJoinerWhile",
@@ -41,11 +48,14 @@ function numberJoinerFor (start, end) {
 
 function numberJoinerFancy (start, end, separator) {
     let result = "";
-    for (start; start <= end; start++) {
-        result = result + start + separator;
+            for (start; start <= end; start++) {
+                if (start < end) {
+            result = result + start + separator;
+            } else {
+                return result += end;
+            }
+        }
     }
-    result = result.slice(0, separator.length * -1);
-    return result;
-}
 
-console.log(numberJoinerFancy(1, 10, "bread")) //This passes for me using node but not in npm. Not sure why
+console.log(numberJoinerFancy(1, 10, "bread")) 
+
