@@ -50,7 +50,9 @@ function isVowel(character) {
 // isOdd(3.14) --> false
 
 function isEven(number) {
-    if (number % 2 === 0) {
+    if (typeof(number) != "number") {
+        return false;
+    } else if (number % 2 === 0) {
         return true;
     } else {
         return false;
@@ -58,7 +60,9 @@ function isEven(number) {
 }
 
 function isOdd(number) {
-    if (number % 2 === 1 || number % 2 === -1) {
+    if (typeof(number) != "number") {
+        return false;
+    } else if (number % 2 === 1 || number % 2 === -1) {
         return true;
     } else {
         return false;

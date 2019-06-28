@@ -48,6 +48,9 @@ console.log(numberJoinerFor(4, 44));
 
 function numberJoinerFancy (start, end, separator) {
     let result = "";
+        if (typeof(separator) === 'undefined') {
+            separator = "_";
+        }
             for (start; start <= end; start++) {
                 if (start < end) {
             result = result + start + separator;

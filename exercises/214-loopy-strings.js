@@ -8,8 +8,16 @@
 // Example:
 // reverse("skoob") --> "books"
 
+function reverse(string) {
+    let result = "";
+        let stringArray = string.split(""); //creates an array from the string
+            for (let index = stringArray.length - 1; index > -1; index--) { //takes the length of the array backwards and adds each character to result
+                result += stringArray[index];
+            }
+                return result;
+}
 
-
+console.log(reverse("test"));
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "findLongestWord" that takes a string of words and returns
 // the longest word in that string. If there are multiple words with the same
@@ -18,7 +26,18 @@
 // Example:
 // findLongestWord('a book full of dogs') --> 'book'
 
+function findLongestWord (string) {
+    let result = "";
+        let stringArray = string.split(" ");
+            for (let index = 0; index < stringArray.length; index++) {
+                    if (stringArray[index].length > result.length) {
+                        result = stringArray[index];
+                    }
+            }
+        return result;
+}
 
+console.log(findLongestWord("This is a test string to see if this is working."));
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function called "nicer"
@@ -29,7 +48,15 @@
 // nicer('mom get the heck in here and bring me a darn sandwich.')
 // > 'mom get the in here and bring me a sandwich.'
 
+function nicer (string) {
+    let badWords = [heck, darn, dang, crappy];
+    let stringArray = string.split(" ");
+        for (let index = 0; index < stringArray.length; index++) {
+            
+        }
+}
 
+// look into .indexOf and how to return an array without an element
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function called "capitalizeAll"
