@@ -49,12 +49,25 @@ console.log(findLongestWord("This is a test string to see if this is working."))
 // > 'mom get the in here and bring me a sandwich.'
 
 function nicer (string) {
-    let badWords = [heck, darn, dang, crappy];
-    let stringArray = string.split(" ");
-        for (let index = 0; index < stringArray.length; index++) {
-            
+    let badWords = ['heck', 'darn', 'dang', 'crappy']; //bad words array
+    let stringArray = string.split(" "); // converting string to array
+        for (let index = 0; index < stringArray.length; index++) { //outer loop to cycle through string that is now an array
+                    for (let indexB = 0; indexB < badWords.length; indexB++) { //inner loop to check if any of the bad words are present
+                        if (stringArray[index].indexOf(badWords[indexB]) >= 0) { //conditional statement if any of the bad words are found. 
+                                stringArray[index] = 'DELETEme'; // replace the bad words with a string for deltions
+                        } 
+                    }
         }
-}
+    let niceArray = stringArray.filter(function(value) { // creating a new array without an of the bad words
+                return value != 'DELETEme';
+            })
+        let niceString = niceArray.join(" "); // converting that array back into a string
+            return niceString;        
+    }
+
+
+console.log(nicer('mom get the heck in here and bring me a darn sandwich.'));
+
 
 // look into .indexOf and how to return an array without an element
 
