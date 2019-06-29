@@ -99,3 +99,4 @@ function isCapitalCity (state, city) {
         return false;
     }
 }
+
