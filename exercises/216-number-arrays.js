@@ -1,7 +1,17 @@
 // Write a function "max" that takes an array of numbers returns the highest
 // number in the array.
 
+function max (array) {
+    let mostHigh = 0;
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] > mostHigh) {
+                mostHigh = array[i];
+            }
+        }
+        return mostHigh;
+    }
 
+console.log(max([1, 234, 33, 52]));
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "sumNumbers" which is given an array of numbers and returns

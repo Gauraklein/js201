@@ -123,12 +123,3 @@ function split (string, delimiter) {
 }
 
 console.log(split('APPLExxBANANAxxCHERRY', 'xx'));
-
-//while loop
-
-// should take a string and loop through it 
-// on the loop it should push each into an Array
-// there should be a conditional statement that uses the delimiter. 
-// So basically if the delimiter is not present then just run through the loop
-// if the delimiter is present then print each value into a string until the delimiter is hit
-// if delimiter is hit then push to an array
