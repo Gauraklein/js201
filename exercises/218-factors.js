@@ -8,35 +8,36 @@
 // gcd(50, 20) --> 10
 
 function gcd (numA, numB) {
-    let divisors = [];
+    let divisorsA = [];
+    let divisorsB = [];
     let commonDivisors = [];
     let greatestCommonDivisor = 1;
         
         // setting up the different variables
     
-        for (let i = 0;  i < numA; i++) {
+        for (let i = 0;  i <= numA; i++) {
             if (numA % i === 0) {
-                divisors.push(i);
+                divisorsA.push(i);
             }
         }
 
         // numA divisors getting pushed to an array
 
-        for (let i = 0;  i < numB; i++) {
+        for (let i = 0;  i <= numB; i++) {
             if (numB % i === 0) {
-                divisors.push(i);
+                divisorsB.push(i);
             }
         }
         
         // numB divisors getting pushed to an array. not sure about the scope here as I am reusing i. lets see what happens.
 
-        function compareDivisors (array) {
+        function compareDivisors (array1, array2) {
 
-            for (let i = 0;  i < divisors.length; i++) {
-                    let divisorInFocus = divisors[i];
-                for (let j = 0; j < divisors.length; j++) {
-                    if (divisors[j] === divisorInFocus) {
-                        commonDivisors.push(divisors[j])
+            for (let i = 0;  i < divisorsA.length; i++) {
+                    let divisorInFocus = divisorsA[i];
+                for (let j = 0; j < divisorsB.length; j++) {
+                    if (divisorsB[j] === divisorInFocus) {
+                        commonDivisors.push(divisorsB[j])
                     }
                 }
             } 
@@ -44,10 +45,10 @@ function gcd (numA, numB) {
         }
 
 
-        commonDivisors = compareDivisors(divisors);
+        commonDivisors = compareDivisors(divisorsA, divisorsB);
 
 
-        //for loop within a for loop that takes a number from the divisors array and looks for a match in the array
+        //for loop within a for loop that takes a number from the divisorsA array and looks for a match in the divisorsB array
         //if it finds one it prints it to a new array
 
 
@@ -64,7 +65,7 @@ function gcd (numA, numB) {
         return greatestCommonDivisor;
     }
 
-
+console.log(gcd(3, 15));
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "factors" which is given a number and returns an array
