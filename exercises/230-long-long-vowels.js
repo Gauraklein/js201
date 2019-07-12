@@ -10,21 +10,46 @@
 // 'Man'
 
 
-    let vowels = ["aa", "ee", "ii", "oo", "uu"]; // array
+// function longLongVowels (string) {
+//    if (string.indexOf('aa') >= 0) {
+//        var longString = string.replace('aa', 'aaaaa');
+//        return longString;
+//    } else if (string.indexOf('ee') >= 0) {
+//         var longString = string.replace('ee', 'eeeee');
+//         return longString;
+//    } else if (string.indexOf('ii') >= 0) {
+//         var longString = string.replace('ii', 'iiiii');
+//         return longString;
+//    } else if (string.indexOf('oo') >= 0) {
+//         var longString = string.replace('oo', 'ooooo');
+//         return longString;
+//    } else if (string.indexOf('uu') >= 0) {
+//         var longString = string.replace('uu', 'uuuuu');
+//         return longString;
+//    } else return string;
+// }
+
+// Long Solution
+
 
 function longLongVowels (string) {
-    stringArray = []
-    for (let i = 0; i < string.length; i++) { 
-        let splitPoint = vowels[i];
-        if (string.indexOf(splitPoint) > 0) { // for loop that cycles through the string to see if the vowels are present
-            stringArray = string.split(splitPoint);
+
+    let vowels = ['aa', 'ee', 'ii', 'oo', 'uu'];
+    let longVowels = ['aaaaa', 'eeeee', 'iiiii', 'ooooo', 'uuuuu'];
+    let longString = "";
+
+        for (let i = 0; i < vowels.length; i++) {
+            
+            if (string.indexOf(vowels[i]) >= 0) {
+                let longString = string.replace(vowels[i], longVowels[i]);
+                return longString;
+            }
+
         }
-    }
-    return stringArray;
+    return string;
 }
 
-console.log(longLongVowels('Good'));
-//for loop that cycles through double vowels in an array
-//if it finds a match then it would split the string into an array without the vowels
-//then it will add in five of that vowel to the middle of the array then rejoin it?
 
+//Cleaner solution, instead of using a series of if else statements I loop through an array that contains long vowels
+//If I find a match the loop runs the replace function and returns the result
+//It passes the test, but I would need to do some tweaking if there were multiple sets of long vowels in a word
