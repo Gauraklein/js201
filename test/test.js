@@ -1059,7 +1059,7 @@ if (allSyntaxValid) {
   describe('Cities', checkCities)
   describe('Long-long Vowels', checkLongLongVowels)
   describe('Leetspeak', checkLeetspeak)
-  describe('Caesar Cipher', checkCaesarCipher)
+  //describe('Caesar Cipher', checkCaesarCipher)
   describe('Make Boxes', checkMakeBoxes)
   describe('Matrix Math', checkMatrixMath)
   describe('Tic Tac Toe', checkTicTacToe)
