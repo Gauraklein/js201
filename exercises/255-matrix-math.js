@@ -4,6 +4,18 @@
 // > matrixAdd([[1, 3], [2, 4]], [[5, 2], [1, 0]])
 // [ [ 6, 5 ], [ 3, 4 ] ]
 
+function matrixAdd (array1, array2) {
+    let result = [[],[]];
+
+        for (let i = 0; i < array1.length; i++) {
+            //for loop to target the first array
+            for (let j = 0; j < array1[i].length; j++) {
+                //for loop cycling through nested array and adding the correct numbers together
+                result[i].push(array1[i][j] + array2[i][j]);
+            }
+        }
+    return result;
+}
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -15,3 +27,7 @@
 // Example:
 // > matrixMultiply([[2, 4], [3, 4]], [[5, 2], [3, 1]])
 // [ [22,  8], [27, 10] ]
+
+function matrixMultiply (array) {
+    
+}

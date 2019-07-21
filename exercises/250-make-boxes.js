@@ -93,19 +93,21 @@ console.log(makeBox(6,4));
 function makeBanner(string) {
     result = "";
 
-        for (let firstLine = 0; firstLine < string.length + 2; firstLine++) {
+        for (let firstLine = 0; firstLine < string.length + 4; firstLine++) {
             result += "*";
         } 
         result += "\n"
-        for (let secondLine = 0; secondLine < string.length + 2; secondLine++) {
-            if (secondLine === 0 || secondLine === string.length + 1) {
+        for (let secondLine = 0; secondLine < string.length + 4; secondLine++) {
+            if (secondLine === 0 || secondLine === string.length + 3) {
                 result += "*"
-            } else if (secondLine === string.length) {
+            } else if (secondLine === 1 || secondLine === string.length +2) {
+                result += " ";
+            } else if (secondLine === 2) {
                 result += string;
             }
         }
         result += "\n";
-        for (let lastLine = 0; lastLine < string.length + 2; lastLine++) {
+        for (let lastLine = 0; lastLine < string.length + 4; lastLine++) {
             result += "*";
         }
 
