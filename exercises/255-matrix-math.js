@@ -28,6 +28,35 @@ function matrixAdd (array1, array2) {
 // > matrixMultiply([[2, 4], [3, 4]], [[5, 2], [3, 1]])
 // [ [22,  8], [27, 10] ]
 
-function matrixMultiply (array) {
-    
+function matrixMultiply (array1, array2) {
+   let result = [[],[]]
+    let array1Result = [[],[]];
+    let array2Result = [[],[]];
+    //for loop that gives the result of array1 multiplication
+    for (let i = 0; i < array1.length; i++) {
+        if (i === 0) {
+            for (let j = 0; j < array2[i].length; j++) {
+                if (j === 0) {
+                array1Result[i].push(array1[i][i] * array2[i][i])
+                } else {
+                    array2Result[i].push(array1[i][i] * array2[i][i])
+                }
+            }
+        } else {
+
+                for (let j = 0; j < array2[i].length; j++) {
+                    if (j === 0) {
+                        array1Result[i].push(array1[i][j] * array2[i][j])
+                    } else {
+                        array2Result[i].push(array1[i][j] * array2[i][j])
+                    }
+                }
+            }
+
+    }
+    console.log(array1Result)
+    console.log(array2Result)
+    return result;
 }
+
+console.log(matrixMultiply([[2, 4], [3, 4]], [[5, 2], [3, 1]]));
